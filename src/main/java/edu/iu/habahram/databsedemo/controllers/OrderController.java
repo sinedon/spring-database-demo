@@ -51,7 +51,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK).body(orders);
     }
 
-    @PostMapping
+    @PostMapping("/search")
     public ResponseEntity<List<Order>> search(@RequestBody Order order) {
         String username = getTheCurrentLoggedInCustomer();
         System.out.println(username);
