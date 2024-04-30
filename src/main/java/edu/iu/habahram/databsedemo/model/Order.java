@@ -1,9 +1,6 @@
 package edu.iu.habahram.databsedemo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -15,10 +12,12 @@ public class Order {
     private int id;
 
     private int flowerId;
+    private String flowerName;
     private String recipientName;
     private float totalCost;
     private String customerUserName;
-
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public Order() {
     }
@@ -62,4 +61,21 @@ public class Order {
     public void setCustomerUserName(String customerUserName) {
         this.customerUserName = customerUserName;
     }
+
+    public String getFlowerName() {
+        return flowerName;
+    }
+
+    public void setFlowerName(String flowerName) {
+        this.flowerName = flowerName;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
 }
